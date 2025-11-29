@@ -24,6 +24,14 @@ begin
 	IDBook, ISBN, Title, Author, Pages from BOOK
 end
 
+-- Filtrar libro unico // Show just the requested book
+CREATE PROCEDURE sp_get_book_by_id
+    @IDBook INT
+AS
+BEGIN
+    SELECT * FROM BOOK WHERE IdBook = @IDBook;
+END
+
 --Agregar libro/Post books
 create proc sp_post_books(
 @ISBN varchar(20),
@@ -60,3 +68,12 @@ create proc sp_delete_books(
 begin
 	delete from BOOK where IDBook = @IDBook
 end
+
+/*
+1	978-0-5468-9549-0	G.R.R Martin	Game of Thrones	574
+2	978-6-0588-6172-5	G.R.R Martin	A Clash of Kings	761
+3	978-5-6151-6604-4	G.R.R Martin	A Storm of Swords	973
+4	978-5-3698-0454-4	G.R.R Martin	A Dance with Dragons	1056
+*/
+
+execute sp_get_books
