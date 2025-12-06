@@ -3,11 +3,13 @@ namespace ApiBooks.Controllers;
 using System.Data;
 using System.Data.SqlClient;
 using ApiBooks.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 [EnableCors("cors")]
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public class BookController : ControllerBase
 {
