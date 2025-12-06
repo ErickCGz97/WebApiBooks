@@ -52,7 +52,8 @@ public class AutenticacionController : ControllerBase
                   SecurityAlgorithms.HmacSha256Signature)
             };
 
-            // Generamos el token usando JwtSecurityTokenHandler
+            // Generar el token usando JwtSecurityTokenHandler
+            // Generate the token using JwtSecurityTokenHandler
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenConfig = tokenHandler.CreateToken(tokenDescriptor);
 
@@ -60,11 +61,13 @@ public class AutenticacionController : ControllerBase
             string createdToken = tokenHandler.WriteToken(tokenConfig);
 
             // Devolvemos el token en la respuesta con código 200 OK
+            // We return the token in the response with a 200 OK status
             return StatusCode(StatusCodes.Status200OK, new {token = createdToken});
         }
         else
         {
             // Si las credenciales no son válidas, devolvemos 400 BadRequest
+            // If the credentials are not valid, we return 400 Bad Request
             return StatusCode(StatusCodes.Status400BadRequest, new {token = " "});
         }
     }
