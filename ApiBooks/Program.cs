@@ -94,11 +94,12 @@ app.MapControllers();
 app.Run();
 
 /*
-1. Creacion de API REST
-    28/11/2025
-2. Autenticacion y Autorizacion API REST con JWT
-    02/12/2025
-        1* Paquetes JWT y Tokens desde Nuget e incluir en Program.cs
-        2* Configuracion de llave secreta en appsettings.json
-3. 
+1.  28/11/2025
+    Creacion de API REST
+2.  02/12/2025
+    Autenticacion y Autorizacion API REST con JWT
+3.  26/12/2025
+    Consumir Web API desde ASP.NET CORE
+
 */
+ 

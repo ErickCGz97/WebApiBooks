@@ -68,7 +68,7 @@ public class AutenticacionController : ControllerBase
         {
             // Si las credenciales no son válidas, devolvemos 400 BadRequest
             // If the credentials are not valid, we return 400 Bad Request
-            return StatusCode(StatusCodes.Status400BadRequest, new {token = " "});
+            return StatusCode(StatusCodes.Status400BadRequest, new {token = "Datos de autenticacion incorrectos"});
         }
     }
 }
