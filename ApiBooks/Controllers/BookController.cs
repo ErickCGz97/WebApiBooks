@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 [EnableCors("cors")]
 [ApiController]
 [Authorize]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class BookController : ControllerBase
 {
     private readonly string connecSQL;

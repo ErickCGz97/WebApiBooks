@@ -29,7 +29,7 @@ public class AutenticacionController : ControllerBase
     {
         // Validación básica de credenciales (usuario y contraseña fijos para pruebas)
         // Basic credential validation (fixed username and password for testing)        
-        if(request.email == "dev@gmail.com" && request.password == "123")
+        if(request.usuario == "admin" && request.password == "123")
         {
             // Convertimos la clave secreta en bytes para firmar el token
             var keyBytes = Encoding.ASCII.GetBytes(secretKey);
@@ -37,7 +37,7 @@ public class AutenticacionController : ControllerBase
             // Creacion de la identidad del usuario y agregar un claim (correo)
             // Creating the user identity and adding a claim (email)
             var claims = new ClaimsIdentity();
-            claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, request.email));
+            claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, request.usuario));
 
             // Configuracion del descriptor del token:
             // - Asigancion de los claims
